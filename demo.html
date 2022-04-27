@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.6.0.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="../JS/index.js"></script>
+    <style>
+        [class*="col-"] {
+            padding: 0 !important;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#btnDK").click(function() {
+                $("#myModal").modal();
+            })
+            $("#txtMaSV").blur(function() {
+                var mauKT = /^[1-9]{1}[0-9]{9}$/
+                var chuoi = $("#txtMaSV").val();
+                if (mauKT.test(chuoi) == true) {
+                    alert("ban nhap dung")
+                } else {
+                    alert("ban nhap sai")
+                }
+            })
+            $("#btnSave").append(function() {
+
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="../Images/logo.PNG" alt="" srcset="">
+            </div>
+            <div class="col-md-10 text-center bg-info">
+                <h3>ĐOÀN THANH NIÊN THÀNH PHỐ HỒ CHÍ MINH</h3>
+                <h4 class="text-danger">ĐOÀN THANH NIÊN TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH </h4>
+            </div>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand-md bg-dark col-md-12 justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-link">TRANG CHỦ</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">ĐOÀN THỂ</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">SỰ KIỆN</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" id="btnDK">HOẠT ĐỘNG</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <aside>
+                    <img src="../Images/ngayhoithanhnien.JPG" alt="" srcset="" class="rounded-circle" width="100%">
+                </aside>
+            </div>
+            <div class="col-md-8">
+                <section>
+                   <div> <h3>DANH SÁCH ĐĂNG KÝ HOẠT ĐỘNG MÙA HÈ XANH</h3></div>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>
+                                <tr>
+                                        <td>STT</td>
+                                        <td>Mã SV</td>
+                                        <td>TÊN SV</td>
+                                        <td>NGÀY THAM GIA</td>
+                                        <td>EMAIL</td>
+                                        <td>SỐ ĐIỆN THOẠI</td>
+                                </tr>
+                            </th>
+                        </tr>
+                        <tbody>
+                            <tr>
+                                <td>52</td>
+                                <td>20042791</td>
+                                <td>Trầm Vĩnh Phát</td>
+                                <td>19/5/2017</td>
+                            
+                                <td>tramvinhphattvh@gmail.com</td>
+                                <td>0939318041</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+        <div class="row">
+            <footer class="col-md012 bg-info text-center">
+            
+            
+            </footer>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    THÔNG TIN ĐĂNG KÝ
+                </div>
+                <div class="modal-body">
+                    <form action="" method="get" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="lblMaSV">Mã sinh viên: </label>
+                            <input type="text" name="txtMaSV" id="txtMaSV" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="lblMaSV">Họ tên: </label>
+                            <input type="text" name="txtHT" id="txtHT" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="lblMaSV">Email: </label>
+                            <input type="text" name="txtEmail" id="txtEmail" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <p>Năng khiếu: </p>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                <input type="checkbox" class="form-checl-input" name="chkBoi" >Bơi
+                                </label>
+                            </div>
+                            <p>Năng khiếu: </p>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                <input type="checkbox" class="form-checl-input" name="chkCauLong" >Cầu lông
+                                </label>
+                            </div>
+                            <p>Năng khiếu: </p>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                <input type="checkbox" class="form-checl-input" name="chkBóngChuyen" >Bóng chuyền
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Thành phố: </label>
+                            <select name="city" id="slCity">
+                                <option value="qn">Quảng Ngãi</option>
+                                <option value="ct">Cần Thơ</option>
+                                <option value="hcm">TP.HCM</option>
+                                <option value="hn">Hà Nội</option>
+                            </select>
+                        </div>
+                        <div class="form-checl">
+                            <p>Giới tính: </p>
+                            <input type="radio" id="radNam" name="Nam" value="Nam"> <label for="Nam">Nam</label> <br>
+                            <input type="radio" id="radNu" name="Nu" value="Nữ"> <label for="Nu">Nữ</label> <br>
+                            <input type="radio" id="radKhac" name="khac" value="Khác"> <label for="khac">Khác</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-conten-center">
+                    <button type="submit" id="btnSubDK" class="btn btn-warning">Đăng Ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
